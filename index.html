@@ -30,5 +30,13 @@
 				}
 			</script>
 		<!--Скрипт конец-->
+		
+		<?php
+		// Найти и записать свойства
+			echo "<h1>file: ReNameKharkov.html</h1>";
+			echo "<p>В последний раз редактировался: " . date("r", filemtime("ReNameKharkov.html")); 
+			echo "<p>В последний раз был открыт: " . date("r", fileatime("ReNameKharkov.html")); 
+			echo "<p>Размер: " . filesize("ReNameKharkov.html") . " байт";
+		?>
 	</body>
 </html>
