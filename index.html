@@ -4,20 +4,31 @@
 		<title>Харьков переИменованный</title>
 	</head>
 	
+
 	<body>
-		<p><input type="text" value="abc"> (text)</p>
-		<p><input type="password" value="abc"> (password)</p>
-		<p><input type="checkbox" checked> (checkbox)</p>
-		<p><input type="radio" value="A" name="choice">
-		   <input type="radio" value="B" name="choice" checked>
-		   <input type="radio" value="C" name="choice"> (radio)</p>
-		<p><input type="file" checked> (file)</p>
-		<p>
-			<select>
-				<option>Блины</option>
-				<option>Запеканка</option>
-				<option>Мороженка </option>
-			</select>
-		</p>
+		<!--Меню начало-->
+			<ul>
+				<li><a href="#" onClick="loadReNameKharkov()">ReNameKharkov</a></li>		
+				<li><a href="#" onClick="loadReNameKharkov2()">ReNameKharkov2</a></li>		
+			</ul>	          
+		<!--Меню конец-->
+		<!--Блок в который будет выводиться содержимое начало-->
+			<iframe src="ReNameKharkov.html" id="contentBlock"></iframe> <!--По умолчанию подгружаем ReNameKharkov.html-->
+		<!--Блок в который будет выводиться содержимое конец-->
+		<!--Блок в который будет выводиться содержимое начало-->
+			<iframe src="ReNameKharkov2.html" id="contentBlock"></iframe> <!--По умолчанию подгружаем ReNameKharkov2.html-->
+		<!--Блок в который будет выводиться содержимое конец-->
+		<!--Скрипт  начало-->
+			<script type="text/javaScript">
+				function loadReNameKharkov() 
+				{ 
+					document.getElementById("contentBlock").setAttribute("src", "ReNameKharkov.html");
+				}
+				function loadReNameKharkov2() 
+				{
+					document.getElementById("contentBlock").setAttribute("src", "ReNameKharkov2.html");
+				}
+			</script>
+		<!--Скрипт конец-->
 	</body>
 </html>
