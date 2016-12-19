@@ -8,27 +8,46 @@
 	<body>
 		<!--Меню начало-->
 			<ul>
-				<li><a href="#" onClick="loadReNameKharkov()">ReNameKharkov</a></li>		
-				<li><a href="#" onClick="loadReNameKharkov2()">ReNameKharkov2</a></li>		
-			</ul>	          
+				<li><a href="#" onClick="loadReNameKharkov()">ReNameKharkov</a></li>
+				<!--<li><a href="#" onClick="loadReNameKharkov2()">ReNameKharkov2</a></li>-->
+			</ul>
 		<!--Меню конец-->
 		<!--Блок в который будет выводиться содержимое начало-->
-			<iframe src="" id="contentBlock"></iframe> <!--По умолчанию подгружаем ReNameKharkov.html-->
+			<iframe src="ReNameKharkov.html" id="contentBlock"></iframe> <!--По умолчанию подгружаем ReNameKharkov.html-->
 		<!--Блок в который будет выводиться содержимое конец-->
 		<!--Блок в который будет выводиться содержимое начало-->
-			<iframe src="" id="contentBlock2"></iframe> <!--По умолчанию подгружаем ReNameKharkov2.html-->
+		<!--	<iframe src="" id="contentBlock2"></iframe> <!--По умолчанию подгружаем ReNameKharkov2.html-->
 		<!--Блок в который будет выводиться содержимое конец-->
+		<p>
+		<p>
+		<p><input type="text" id="search_words">
+		<input type="button" onclick="search()"></p>
+		<p>
+		<p>
+		<p><input type="text" id="street" value="" size="100%"></p>
 		<!--Скрипт  начало-->
-			<script type="text/javaScript">
+			<script type = "text/javaScript">
 				function loadReNameKharkov() 
 				{ 
 					document.getElementById("contentBlock").setAttribute("src", "ReNameKharkov.html");
 				}
-				function loadReNameKharkov2() 
-				{
-					document.getElementById("contentBlock2").setAttribute("src", "ReNameKharkov2.html");
-				}
+				//function loadReNameKharkov2() 
+				//{
+				//	document.getElementById("contentBlock2").setAttribute("src", "ReNameKharkov2.html");
+				//}
 			</script>
 		<!--Скрипт конец-->
+			<script type = "text/javaScript">
+				function search()
+				{
+					var words = search_words.value;
+					var text1 = document.getElementById("contentBlock");
+					var text = text1.contentDocument.getElementById(words).innerHTML;
+					//var result=text.replace(words,"<span style='background-color:Red; color:White;'>"+words+"</span>");
+					//document.getElementById('container').innerHTML=result;
+					//alert(text);
+					document.getElementById('street').value = text;
+				}
+			</script>
 	</body>
 </html>
